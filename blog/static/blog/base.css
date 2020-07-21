@@ -1,0 +1,19 @@
+body{
+    font-family: 'Open Sans', sans-serif;
+}
+
+#aboutcard{
+    margin: 10px;
+}
+
+#blogtitle{
+    text-decoration: none;
+    color: black;
+}
+#blogtitle:hover{
+    text-decoration: none;
+    color: blue;
+}
+nav{
+    position: sticky;
+}
