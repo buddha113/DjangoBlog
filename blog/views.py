@@ -5,6 +5,9 @@ from django.views.generic import ListView,DetailView,CreateView,UpdateView,Delet
 from django.contrib.auth.mixins import LoginRequiredMixin,UserPassesTestMixin
 
 
+from analytics.mixins import objectViewedMixin
+
+
 # Create your views here.
 # Creating dummy data for the test only
 
@@ -27,8 +30,9 @@ class PostListView(ListView):
     paginate_by=3
     
 
-class PostDetailView(DetailView):
+class PostDetailView(objectViewedMixin ,DetailView):
     model = Post
+
     #if we dont give the context_object_name in this class then default will ob 'object' which will used to called objects from model we created
     # if we dont give the template_name then default will be modelname_viewtype(https://docs.djangoproject.com/en/3.0/ref/class-based-views/).html or we can give our own template name 
 
